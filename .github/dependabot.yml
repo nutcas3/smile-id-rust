@@ -17,7 +17,6 @@ updates:
       - "rust"
     allow:
       - dependency-type: "all"
-    ignore: []
     groups:
       rust-dependencies:
         patterns: ["*"]
