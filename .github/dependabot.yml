@@ -1,0 +1,29 @@
+# Dependabot configuration for Rust dependencies
+version: 2
+updates:
+  # Monitor Cargo.toml for dependency updates
+  - package-ecosystem: "cargo"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    assignees:
+      - "nutcas3"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "rust"
+    allow:
+      # Allow both direct and indirect dependencies
+      - dependency-type: "all"
+    ignore:
+      # Example: ignore specific versions if needed
+      # - dependency-name: "reqwest"
+      #   versions: ["0.12.24"]
+    groups:
+      rust-dependencies:
+        patterns: ["*"]
